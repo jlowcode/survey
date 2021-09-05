@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<form>
+	<fields name="params">
+	
+		<fieldset addfieldpath="/administrator/components/com_fabrik/models/fields" name="plg-element-survey">
+	
+			<field type="helplink"
+				url="PLG_ELEMENT_SURVEY_HELP_SERVER" />
+
+			<field name="survey_access"
+				   type="accesslevel"
+				   default="1"
+				   label="PLG_ELEMENT_SURVEY_ACCESS_LABEL"
+				   repeat="true" />
+
+			<field name="sub_options"
+				   type="suboptions"
+				   label="COM_FABRIK_SUBOPTIONS"
+			/>
+				
+		</fieldset>
+		
+	</fields>
+		
+</form>
