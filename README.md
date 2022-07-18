@@ -18,7 +18,7 @@
     </li>
 </ul>
 
-<p>Atualmente existe um plugin similar chamado "Thumb Plugin" mas o mesmo só suporta duas alternativas para votação por item</p>
+<p>Atualmente existe um plugin similar chamado "Thumb Plugin" mas o mesmo só suporta duas alternativas para votação por item.</p>
 
 [Thumbs Element](http://fabrikar.com/forums/index.php?wiki/thumbs-element/)
 
@@ -32,7 +32,7 @@
 
 <br />
 
-<p>Nas configurações deve-se criar as opções a serem votadas na sessão "Sub Options" assim essas opções estaram disponíveis para voto na listagem como exemplificado na imagem abaixo:  </p>
+<p>Nas configurações, especificamente na sessão "Sub Options", deve-se criar as opções a serem votadas. Assim essas opções estarão disponíveis para voto na listagem como exemplificado na imagem abaixo:  </p>
 
 <div align="center">
   <img src="./.github/2.png" />
