@@ -3,6 +3,11 @@
 
 // No direct access
 defined('_JEXEC') or die('Restricted access');
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Application;
+use Joomla\CMS\Application\ApplicationHelper;
+
+
 
 jimport('joomla.application.component.model');
 
@@ -192,12 +197,12 @@ class PlgFabrik_ElementSurvey extends PlgFabrik_ElementList
         $name = $this->getHTMLName($repeatCounter);
         $id = $this->getHTMLId($repeatCounter);
         $input = $this->app->input;
-        $j3 = FabrikWorker::j3();
+        //$j3 = FabrikWorker::j3();
 
         if ($input->get("view") == 'details') {
             $layout = $this->getLayout('form');
             $layoutData = new stdClass;
-            $layoutData->j3 = $j3;
+            //$layoutData->j3 = $j3;
             $layoutData->name = $name;
             $layoutData->id = $id;
             $layoutData->tmpl = isset ($this->tmpl) ? $this->tmpl : '';
@@ -206,7 +211,7 @@ class PlgFabrik_ElementSurvey extends PlgFabrik_ElementList
             return $layout->render($layoutData);
         }
         else {
-            return FText::_('PLG_ELEMENT_SURVEY_MSG_FORM');
+            return Text::_('PLG_ELEMENT_SURVEY_MSG_FORM');
         }
 
 	}
@@ -285,17 +290,7 @@ class PlgFabrik_ElementSurvey extends PlgFabrik_ElementList
 	private function getCookieName($listId)
 	{
 		$cookieName = 'survey-table_' . $listId . '_ip_' . FabrikString::filteredIp();
-		jimport('joomla.utilities.utility');
-		$version = new JVersion;
-
-		if (version_compare($version->RELEASE, '3.1', '>'))
-		{
-			return JApplicationHelper::getHash($cookieName);
-		}
-		else
-		{
-			return JApplication::getHash($cookieName);
-		}
+		return ApplicationHelper::getHash($cookieName);
 	}
 
 	public function insertRating ($userId, $table, $rowId, $value, $elementName) {
@@ -365,7 +360,7 @@ class PlgFabrik_ElementSurvey extends PlgFabrik_ElementList
 
 		$opts = new stdClass;
 		$opts->canUse = $this->canUse();
-		$opts->noAccessMsg = FText::_($params->get('thumbs_no_access_msg', FText::_('PLG_ELEMENT_THUMBS_NO_ACCESS_MSG_DEFAULT')));
+		$opts->noAccessMsg = Text::_($params->get('thumbs_no_access_msg', Text::_('PLG_ELEMENT_THUMBS_NO_ACCESS_MSG_DEFAULT')));
 		$opts->listid = $list->id;
 		$opts->formid = $this->getFormModel()->getId();
 		$opts->imagepath = COM_FABRIK_LIVESITE . 'plugins/fabrik_element/thumbs/images/';
